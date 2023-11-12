@@ -1,0 +1,12 @@
+    string frequencySort(string s) {
+        unordered_map<char,int>mp;
+        for(auto x:s)
+        {
+            mp[x]++;
+        }
+
+        sort(s.begin(), s.end(),[&](char a, char b)
+        {return mp[a]!=mp[b]?mp[a]>mp[b]:a<b ;});
+
+        return s;
+    }
